@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cases - CrimeLens AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h2>CrimeLens AI</h2>
+
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/cases">Cases</a>
+        <a href="#">Evidence</a>
+        <a href="#">Reports</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Crime Cases</h1>
+
+    <a href="/add-case" class="btn">+ Add New Case</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Case No.</th>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Incident Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for case in cases %}
+            <tr>
+                <td>{{ case[1] }}</td>
+                <td>{{ case[2] }}</td>
+                <td>{{ case[4] }}</td>
+                <td>{{ case[5] }}</td>
+                <td>{{ case[6] }}</td>
+                <td>
+                    <a href="/case/{{case[0]}}"  class="btn">View</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

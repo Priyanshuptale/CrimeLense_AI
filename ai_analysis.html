@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Analysis - CrimeLens AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h2>CrimeLens AI</h2>
+
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/cases">Cases</a>
+        <a href="/evidence">Evidence</a>
+        <a href="/reports">Reports</a>
+         <a href="/logout">logout</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>CrimeLens AI Investigation Center</h1>
+
+<p>
+    AI-assisted case review and investigation data analysis
+</p>
+
+    <div class="card">
+
+        <h3>Case Analysis</h3>
+
+        <p>
+            Select a case to analyze and organize investigation data.
+        </p>
+
+        <form method="POST">
+
+            <label>Select Case</label>
+
+            <select name="case_id" required>
+
+                <option value="">
+                    -- Select a Case --
+                </option>
+
+                {% for case in cases %}
+
+                <option value="{{ case[0] }}">
+                    {{ case[1] }} - {{ case[2] }}
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+            <br><br>
+
+            <button type="submit" class="btn">
+                Analyze Selected Case
+            </button>
+
+        </form>
+
+    </div>
+
+
+    {% if analysis %}
+
+    <div class="card">
+
+        <h2>AI Analysis Result</h2>
+        <p>
+    The following insights are generated from the selected case
+    records for investigation review.
+</p>
+
+  <div class="ai-result">
+    {{ analysis }}
+</div>
+
+    </div>
+
+    {% endif %}
+
+
+</div>
+
+</body>
+</html>

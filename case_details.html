@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Case Details - CrimeLens AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h2>CrimeLens AI</h2>
+
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/cases">Cases</a>
+        <a href="#">Evidence</a>
+        <a href="#">Reports</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Case Details</h1>
+
+    <p><strong>Case Number:</strong> {{ case[1] }}</p>
+    <p><strong>Title:</strong> {{ case[2] }}</p>
+    <p><strong>Description:</strong> {{ case[3] }}</p>
+    <p><strong>Location:</strong> {{ case[4] }}</p>
+    <p><strong>Incident Date:</strong> {{ case[5] }}</p>
+    <p><strong>Status:</strong> {{ case[6] }}</p>
+
+    <br>
+
+    <a href="/cases" class="btn">← Back to Cases</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Witness - CrimeLens AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h2>CrimeLens AI</h2>
+
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/cases">Cases</a>
+        <a href="/evidence">Evidence</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Add Witness</h1>
+
+    <form method="POST">
+
+        <label>Case ID</label>
+        <input type="number" name="case_id" required>
+
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Age</label>
+        <input type="number" name="age">
+
+        <label>Gender</label>
+        <select name="gender">
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label>Statement</label>
+        <textarea name="statement" rows="5"></textarea>
+
+        <label>Contact Information</label>
+        <input type="text" name="contact_info">
+
+        <label>Status</label>
+        <select name="status">
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+            <option value="Under Review">Under Review</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit" class="btn">Add Witness</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - CrimeLens_AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>CrimeLens_AI</h1>
+        <h2>Investigator Login</h2>
+
+        {% if message %}
+            <p style="color: red;">
+                {{ message }}
+            </p>
+        {% endif %}
+
+        <form method="POST">
+
+            <label>Username</label>
+            <input type="text"
+                   name="username"
+                   required>
+
+            <label>Password</label>
+            <input type="password"
+                   name="password"
+                   required>
+
+            <br><br>
+
+            <button type="submit" class="btn">
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

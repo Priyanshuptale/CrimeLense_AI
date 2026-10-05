@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evidence - CrimeLens AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h2>CrimeLens AI</h2>
+
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/cases">Cases</a>
+        <a href="/add-evidence">Add Evidence</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Evidence Records</h1>
+
+    <!-- SEARCH & FILTER -->
+    <div class="card">
+
+        <h2>Search & Filter Evidence</h2>
+
+        <form method="GET" action="/evidence">
+
+            <label>Case ID</label>
+            <input
+                type="number"
+                name="case_id"
+                placeholder="Enter Case ID"
+            >
+
+            <label>Evidence Type</label>
+            <input
+                type="text"
+                name="evidence_type"
+                placeholder="e.g. CCTV, Photo, Document"
+            >
+
+            <label>Status</label>
+            <select name="status">
+                <option value="">-- All Status --</option>
+                <option value="Collected">Collected</option>
+                <option value="Verified">Verified</option>
+                <option value="Under Review">Under Review</option>
+            </select>
+
+            <label>Location</label>
+            <input
+                type="text"
+                name="location"
+                placeholder="Enter location"
+            >
+
+            <br><br>
+
+            <button type="submit" class="btn">
+                Search Evidence
+            </button>
+
+            <a href="/evidence" class="btn">
+                Reset
+            </a>
+
+        </form>
+
+    </div>
+
+    <br>
+
+    <a href="/add-evidence" class="btn">+ Add Evidence</a>
+
+    <br><br>
+
+    <!-- EVIDENCE TABLE -->
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Evidence ID</th>
+                <th>Case ID</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>File</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for item in evidence %}
+
+            <tr>
+
+                <td>{{ item[0] }}</td>
+
+                <td>{{ item[1] }}</td>
+
+                <td>{{ item[2] }}</td>
+
+                <td>{{ item[3] }}</td>
+
+                <td>{{ item[4] }}</td>
+
+                <td>{{ item[5] }}</td>
+
+                <td>{{ item[6] }}</td>
+
+                <td>
+                    {% if item[7] %}
+                        <a href="/uploads/{{ item[7] }}" target="_blank">
+                            View File
+                        </a>
+                    {% else %}
+                        No File
+                    {% endif %}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

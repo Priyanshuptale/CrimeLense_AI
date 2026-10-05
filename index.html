@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CrimeLens AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            CrimeLens_AI
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/logout">Logout</a>
+            <div class="dropdown">
+    
+
+    <div class="dropdown-content">
+        <a href="/add-case">Add Case</a>
+       
+    </div>
+</div>
+            <a href="evidence">Evidence</a>
+        
+            <a href="reports">Reports</a>
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <h1>
+            Intelligent Crime Investigation
+        </h1>
+
+        <p>
+            Digital Forensics & Investigation Management Platform
+        </p>
+
+    </section>
+
+
+    <section class="dashboard">
+
+        <h2>Investigation Dashboard</h2>
+        <div class="cards">
+
+    <div class="card">
+        <h3>Total Cases</h3>
+        <p>{{ total_cases }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Evidence</h3>
+        <p>{{ total_evidence }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Open Cases</h3>
+        <p>{{ open_cases }}</p>
+    </div>
+
+</div>
+
+        <div class="cards">
+
+           <div class="card">
+    <h3>Cases</h3>
+    <p>Manage investigation cases </p>
+        <a href="/cases"class="btn">view</a>
+    
+</div>
+
+            <div class="card">
+                <h3>Suspects</h3>
+                <p>Manage suspect information</p>
+    <a href="/suspects" class="btn">view</a>
+
+            </div>
+
+            <div class="card">
+    <h3>Witnesses</h3>
+    <p>Manage witness information</p>
+    <a href="/witnesses" class="btn">View</a>
+</div>
+
+            <div class="card">
+    <h3>Evidence</h3>
+    <p>Manage digital evidence </p>
+        <a href="/evidence"class="btn">View</a>
+    
+</div>
+
+        <a href="/ai-analysis" class="dashboard-card-link">
+    <div class="card">
+        <h3>AI Analysis</h3>
+        <p>Analyze investigation data using AI assistance</p>
+    </div>
+</a>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

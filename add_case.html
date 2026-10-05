@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Case - CrimeLens AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            crimeless-ai
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/add-case">Add Case</a>
+        </div>
+
+    </nav>
+
+
+    <div class="dashboard">
+
+        <h2>Add New Crime Case</h2>
+
+        <form method="POST">
+
+            <div class="card">
+
+                <label>Case Number</label>
+                <input type="text"
+                       name="case_number"
+                       placeholder="Example: CR-002"
+                       required>
+
+                <br><br>
+
+                <label>Case Title</label>
+                <input type="text"
+                       name="title"
+                       placeholder="Enter case title"
+                       required>
+
+                <br><br>
+
+                <label>Description</label>
+                <textarea name="description"
+                          placeholder="Enter case description"></textarea>
+
+                <br><br>
+
+                <label>Location</label>
+                <input type="text"
+                       name="location"
+                       placeholder="Enter location">
+
+                <br><br>
+
+                <label>Incident Date</label>
+                <input type="date"
+                       name="incident_date">
+
+                <br><br>
+
+                <label>Status</label>
+                <select name="status">
+
+                    <option value="Open">Open</option>
+                    <option value="Under Investigation">
+                        Under Investigation
+                    </option>
+                    <option value="Closed">Closed</option>
+
+                </select>
+
+                <br><br>
+
+                <button type="submit">
+                    Add Case
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

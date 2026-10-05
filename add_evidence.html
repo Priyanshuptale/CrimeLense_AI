@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Evidence - CrimeLens AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h2>CrimeLens AI</h2>
+
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/cases">Cases</a>
+        <a href="/evidence">Evidence</a>
+        <a href="/reports">Reports</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Add Evidence</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Case ID</label>
+        <input type="number" name="case_id" required>
+
+
+        <label>Evidence Type</label>
+        <input type="text"
+               name="evidence_type"
+               placeholder="e.g. Document, Photo, CCTV"
+               required>
+
+
+        <label>Description</label>
+        <textarea name="description"
+                  rows="4"></textarea>
+
+
+        <label>Evidence File</label>
+        <input type="file"
+               name="evidence_file">
+
+
+        <label>Collected Date</label>
+        <input type="date"
+               name="collected_date">
+
+
+        <label>Location</label>
+        <input type="text"
+               name="location">
+
+
+        <label>Status</label>
+        <select name="status">
+
+            <option value="Collected">
+                Collected
+            </option>
+
+            <option value="Verified">
+                Verified
+            </option>
+
+            <option value="Under Review">
+                Under Review
+            </option>
+
+        </select>
+
+
+        <br><br>
+
+        <button type="submit" class="btn">
+            Add Evidence
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
